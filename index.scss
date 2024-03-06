@@ -1,0 +1,49 @@
+
+
+html {
+    font-family: 'Manrope', sans-serif;
+    src: url(fonts/manrope/manrope/Manrope-VariableFont_wght.ttf);
+    font-size: 1.25rem;
+
+    color: white;
+}
+
+.modal {
+    $base-color: white;
+    $base-grey: #F6F7F8;
+    $text-base: #020A0A;
+    $text-grey: #787878;
+    
+    $modal-radious: 25px;
+    width: min(933px,100%);
+    height: 587px;
+    background-color: $base-color;
+    
+    border-color: $base-color;
+    border-radius: $modal-radious;
+    -webkit-border-radius: $modal-radious;
+    -moz-border-radius: $modal-radious;
+    -ms-border-radius: $modal-radious;
+    -o-border-radius: $modal-radious;
+
+    // @media screen and (min-width: 933px){
+    //     display: grid;
+    //     grid-area: "";
+    // }
+
+    ::backdrop {
+        background: rgb(0 0 0 / 0.4);
+    }
+    img{
+        width:348px; 
+        height:298px;
+        display: block;
+        object-fit: cover;
+
+        border-radius: $modal-radious;
+        -webkit-border-radius: $modal-radious;
+        -moz-border-radius: $modal-radious;
+        -ms-border-radius: $modal-radious;
+        -o-border-radius: $modal-radious;
+    }
+}

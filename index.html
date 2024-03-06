@@ -1,13 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тестовое Студия Вегас</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    
+    <h1>Lorem</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque consequatur, corrupti voluptatum maiores
+        fugit odit iusto error perferendis modi molestias, tempora dignissimos doloribus facere dolor neque commodi
+        provident voluptatem eligendi?</p>
+    <button class="button open-modal">Модалка</button>
+    <dialog class="modal" id="modal">
+        <div>
+            <h3>Батат фри</h3>
+            <p>140 г</p>
+        </div>
+        <img src="/img/1.jpeg" alt="Батат фри">
+        <table>
+            <thead>КБЖУ (на порцию 300 г):</thead>
+            <tbody>
+                <tr>
+                    <td>Белки</td>
+                    <td>26,70 г</td>
+                </tr>
+                <tr>
+                    <td>Жиры</td>
+                    <td>17,38 г</td>
+                </tr>
+                <tr>
+                    <td>Углеводы</td>
+                    <td>17,20 г</td>
+                </tr>
+                <tr>
+                    <td>Калорийность</td>
+                    <td>324,08 ккал</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div class="sauces">
+            <div>
+                <h4>Соус на выбор</h4>
+                <p>1 / 1 за 0₽</p>
+            </div>
+            <div>
+                <div class="sauce">
+                    <p>Кетчуп<span class="sauce_price"></span></p>
+                    <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                </div>
+                <div class="sauce">
+                    <p>Сырный<span class="sauce_price"></span></p>
+                    <div class="counter"><button>-</button><span >0</span><button>+</button></div>
+                </div>
+                <div class="sauce">
+                    <p>Блю-чиз<span class="sauce_price"></span></p>
+                    <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                </div>
+                <div class="sauce">
+                    <p>Барбекю<span class="sauce_price"></span></p>
+                    <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                </div>
+            </div>
+        </div>
+    </dialog>
     <script src="index.js"></script>
 </body>
+
 </html>
