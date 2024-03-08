@@ -15,13 +15,17 @@
         provident voluptatem eligendi?</p>
     <button class="button open-modal">Модалка</button>
     <dialog class="modal" id="modal">
-        <div>
+        <div class="top">
             <h3>Батат фри</h3>
-            <p>140 г</p>
+            <span class="weight">140 г</span>
         </div>
         <img src="/img/1.jpeg" alt="Батат фри">
         <table>
-            <thead>КБЖУ (на порцию 300 г):</thead>
+            <thead>
+                <tr>
+                    <th colspan="2">КБЖУ (на порцию 300 г):</th>
+                </tr>
+            </thead>
             <tbody>
                 <tr>
                     <td>Белки</td>
@@ -41,31 +45,32 @@
                 </tr>
             </tbody>
         </table>
-        <hr>
         <div class="sauces">
-            <div>
+            <hr>
+            <div class="header">
                 <h4>Соус на выбор</h4>
-                <p>1 / 1 за 0₽</p>
+                <span>1 / 1 за 0₽</span>
             </div>
-            <div>
+            <div class="body">
                 <div class="sauce">
-                    <p>Кетчуп<span class="sauce_price"></span></p>
+                    <div><span class="name">Кетчуп</span><span class="price">+0₽</span></div>
                     <div class="counter"><button>-</button><span>0</span><button>+</button></div>
                 </div>
                 <div class="sauce">
-                    <p>Сырный<span class="sauce_price"></span></p>
-                    <div class="counter"><button>-</button><span >0</span><button>+</button></div>
-                </div>
-                <div class="sauce">
-                    <p>Блю-чиз<span class="sauce_price"></span></p>
+                    <div><span class="name">Сырный</span><span class="price">+60₽</span></div>
                     <div class="counter"><button>-</button><span>0</span><button>+</button></div>
                 </div>
                 <div class="sauce">
-                    <p>Барбекю<span class="sauce_price"></span></p>
+                    <div><span class="name">Блю-чиз</span><span class="price">+60₽</span></div>
+                    <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                </div>
+                <div class="sauce">
+                    <div><span class="name">Барбекю</span><span class="price">+60₽</span></div>
                     <div class="counter"><button>-</button><span>0</span><button>+</button></div>
                 </div>
             </div>
         </div>
+        <div class="total"><span>0₽</span><button id="add">Добавить</button></div>
     </dialog>
     <script src="index.js"></script>
 </body>
