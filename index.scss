@@ -34,6 +34,17 @@ html {
     -ms-border-radius: $modal-radious;
     -o-border-radius: $modal-radious;
 
+    .close-modal{
+        position: relative;
+        top: 0px;
+        left: 96%;
+        border-width: 0;
+        border-radius: 10em;
+        -webkit-border-radius: 10em;
+        -moz-border-radius: 10em;
+        -ms-border-radius: 10em;
+        -o-border-radius: 10em;
+}
     .wrapper {
         @media screen and (min-width: 800px) {
             display: grid;
