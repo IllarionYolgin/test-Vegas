@@ -20,191 +20,191 @@ html {
     $text-base: #020A0A;
     $text-grey: #787878;
     $text-red: #DE341D;
-
     $modal-radious: 25px;
     width: min(933px, 100%);
     height: min(587px, 100%);
+    padding: min(32px, 5%);
     background-color: $base-color;
-
     border-color: $base-color;
+    border-width: 0;
+
     border-radius: $modal-radious;
     -webkit-border-radius: $modal-radious;
     -moz-border-radius: $modal-radious;
     -ms-border-radius: $modal-radious;
     -o-border-radius: $modal-radious;
 
-    padding: min(32px, 5%);
+    .wrapper {
+        @media screen and (min-width: 800px) {
+            display: grid;
+            grid-template-columns: 4fr 5fr;
+            grid-template-areas:
+                'img head'
+                'img sauces'
+                'table sauces'
+                'table total';
 
-    @media screen and (min-width: 800px) {
-        display: grid;
-        grid-template-columns: 4fr 5fr;
-        grid-template-areas:
-            'img head'
-            'img sauces'
-            'table sauces'
-            'table total';
-
-        column-gap: 32px;
-    }
-
-    .top {
-        margin-bottom: 24px;
-
-        h3 {
-            margin-top: 8px;
-            margin-bottom: 8px;
+            column-gap: 32px;
         }
 
-        .weight {
-            color: $text-grey;
-            margin-top: 8px;
-        }
-    }
+        .top {
+            margin-bottom: 24px;
 
-
-    img {
-        grid-area: img;
-        width: 348px;
-        height: 298px;
-        display: block;
-        object-fit: cover;
-
-        border-radius: $modal-radious;
-        -webkit-border-radius: $modal-radious;
-        -moz-border-radius: $modal-radious;
-        -ms-border-radius: $modal-radious;
-        -o-border-radius: $modal-radious;
-    }
-
-    table {
-        grid-area: table;
-        width: max(348px, 100%);
-        margin-top: 32px;
-
-        thead {
-            width: 100%;
-
-            font-weight: bold;
-
-            th {
-                // width: 100%;
-                text-align: left;
-            }
-        }
-
-        tbody {
-            width: 100%;
-
-            color: $text-grey;
-
-            td {
-                width: 50%;
+            h3 {
+                margin-top: 8px;
+                margin-bottom: 8px;
             }
 
-            td:nth-child(2) {
-                text-align: right;
-            }
-        }
-    }
-
-    .sauces {
-        grid-area: sauces;
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            gap: 8px;
-
-            margin-top: 24px;
-            margin-bottom: 12px;
-
-            font-size: 18px;
-
-            h4 {
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-
-            span {
-                font-size: 16px;
+            .weight {
                 color: $text-grey;
+                margin-top: 8px;
             }
         }
 
-        .body {
-            .sauce {
+
+        img {
+            grid-area: img;
+            width: 348px;
+            height: 298px;
+            display: block;
+            object-fit: cover;
+
+            border-radius: $modal-radious;
+            -webkit-border-radius: $modal-radious;
+            -moz-border-radius: $modal-radious;
+            -ms-border-radius: $modal-radious;
+            -o-border-radius: $modal-radious;
+        }
+
+        table {
+            grid-area: table;
+            width: max(348px, 100%);
+            margin-top: 32px;
+
+            thead {
+                width: 100%;
+
+                font-weight: bold;
+
+                th {
+                    // width: 100%;
+                    text-align: left;
+                }
+            }
+
+            tbody {
+                width: 100%;
+
+                color: $text-grey;
+
+                td {
+                    width: 50%;
+                }
+
+                td:nth-child(2) {
+                    text-align: right;
+                }
+            }
+        }
+
+        .sauces {
+            grid-area: sauces;
+
+            .header {
                 display: flex;
                 justify-content: space-between;
+                gap: 8px;
+
+                margin-top: 24px;
+                margin-bottom: 12px;
 
                 font-size: 18px;
-                padding: 12px;
-                margin-bottom: 8px;
 
-                background-color: $base-grey;
-
-                .name {
-                    margin-right: 8px;
+                h4 {
+                    margin-top: 0;
+                    margin-bottom: 0;
                 }
 
-                .price {
+                span {
+                    font-size: 16px;
                     color: $text-grey;
                 }
+            }
 
-                .counter {
+            .body {
+                .sauce {
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-between;
 
-                    button {
-                        width: 24px;
-                        height: 24px;
+                    font-size: 18px;
+                    padding: 12px;
+                    margin-bottom: 8px;
 
-                        border: 0;
-                        background-color: $base-grey;
+                    background-color: $base-grey;
 
-
+                    .name {
+                        margin-right: 8px;
                     }
 
-                    span {
-                        width: 32px;
-                        height: 24px;
-                        text-align: center;
+                    .price {
+                        color: $text-grey;
+                    }
 
-                        margin-left: 8px;
-                        margin-right: 8px;
+                    .counter {
+                        display: flex;
+                        justify-content: center;
+
+                        button {
+                            width: 24px;
+                            height: 24px;
+
+                            border: 0;
+                            background-color: $base-grey;
+
+
+                        }
+
+                        span {
+                            width: 32px;
+                            height: 24px;
+                            text-align: center;
+
+                            margin-left: 8px;
+                            margin-right: 8px;
+                        }
                     }
                 }
             }
         }
-    }
 
-    .total {
-        grid-area: total;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        .total {
+            grid-area: total;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-        line-height: 44.8px;
-        font-size: 32px;
-        font-weight: 700;
+            line-height: 44.8px;
+            font-size: 32px;
+            font-weight: 700;
 
-        margin-top: 20px;
-        margin-bottom: 20px;
+            margin-top: 20px;
 
-        #add {
-            width: 176px;
-            height: 65px;
+            #add {
+                width: 176px;
+                height: 65px;
 
-            border-width: 0;
-            border-radius: 100px;
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-            -ms-border-radius: 100px;
-            -o-border-radius: 100px;
+                border-width: 0;
+                border-radius: 100px;
+                -webkit-border-radius: 100px;
+                -moz-border-radius: 100px;
+                -ms-border-radius: 100px;
+                -o-border-radius: 100px;
 
-            background-color: $text-red;
+                background-color: $text-red;
 
-            color: $base-color;
-            font-size: 18px;
+                color: $base-color;
+                font-size: 18px;
+            }
         }
     }
 }

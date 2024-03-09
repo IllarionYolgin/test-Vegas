@@ -15,62 +15,64 @@
         provident voluptatem eligendi?</p>
     <button class="button open-modal">Модалка</button>
     <dialog class="modal" id="modal">
-        <div class="top">
-            <h3>Батат фри</h3>
-            <span class="weight">140 г</span>
-        </div>
-        <img src="/img/1.jpeg" alt="Батат фри">
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">КБЖУ (на порцию 300 г):</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Белки</td>
-                    <td>26,70 г</td>
-                </tr>
-                <tr>
-                    <td>Жиры</td>
-                    <td>17,38 г</td>
-                </tr>
-                <tr>
-                    <td>Углеводы</td>
-                    <td>17,20 г</td>
-                </tr>
-                <tr>
-                    <td>Калорийность</td>
-                    <td>324,08 ккал</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="sauces">
-            <hr>
-            <div class="header">
-                <h4>Соус на выбор</h4>
-                <span>1 / 1 за 0₽</span>
+        <div class="wrapper">
+            <div class="top">
+                <h3>Батат фри</h3>
+                <span class="weight">140 г</span>
             </div>
-            <div class="body">
-                <div class="sauce">
-                    <div><span class="name">Кетчуп</span><span class="price">+0₽</span></div>
-                    <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+            <img src="/img/1.jpeg" alt="Батат фри">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">КБЖУ (на порцию 300 г):</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Белки</td>
+                        <td>26,70 г</td>
+                    </tr>
+                    <tr>
+                        <td>Жиры</td>
+                        <td>17,38 г</td>
+                    </tr>
+                    <tr>
+                        <td>Углеводы</td>
+                        <td>17,20 г</td>
+                    </tr>
+                    <tr>
+                        <td>Калорийность</td>
+                        <td>324,08 ккал</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="sauces">
+                <hr>
+                <div class="header">
+                    <h4>Соус на выбор</h4>
+                    <span>1 / 1 за 0₽</span>
                 </div>
-                <div class="sauce">
-                    <div><span class="name">Сырный</span><span class="price">+60₽</span></div>
-                    <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-                </div>
-                <div class="sauce">
-                    <div><span class="name">Блю-чиз</span><span class="price">+60₽</span></div>
-                    <div class="counter"><button>-</button><span>0</span><button>+</button></div>
-                </div>
-                <div class="sauce">
-                    <div><span class="name">Барбекю</span><span class="price">+60₽</span></div>
-                    <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                <div class="body">
+                    <div class="sauce">
+                        <div><span class="name">Кетчуп</span><span class="price">+0₽</span></div>
+                        <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                    </div>
+                    <div class="sauce">
+                        <div><span class="name">Сырный</span><span class="price">+60₽</span></div>
+                        <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                    </div>
+                    <div class="sauce">
+                        <div><span class="name">Блю-чиз</span><span class="price">+60₽</span></div>
+                        <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                    </div>
+                    <div class="sauce">
+                        <div><span class="name">Барбекю</span><span class="price">+60₽</span></div>
+                        <div class="counter"><button>-</button><span>0</span><button>+</button></div>
+                    </div>
                 </div>
             </div>
+            <div class="total"><span>0₽</span><button id="add">Добавить</button></div>
         </div>
-        <div class="total"><span>0₽</span><button id="add">Добавить</button></div>
     </dialog>
     <script src="index.js"></script>
 </body>
