@@ -34,14 +34,16 @@ html {
     -ms-border-radius: $modal-radious;
     -o-border-radius: $modal-radious;
 
-    .btnhover{
+    .btn_animetion_dark {
         transition: all 0.5s;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -ms-transition: all 0.5s;
         -o-transition: all 0.5s;
-}
-    .btnhover:hover{
+    }
+
+    .btn_animetion_dark:hover {
+        cursor: pointer;
         filter: brightness(85%);
         -webkit-filter: brightness(85%);
 
@@ -50,9 +52,48 @@ html {
         -moz-transition: all 0.5s;
         -ms-transition: all 0.5s;
         -o-transition: all 0.5s;
+    }
+
+    .btn_animetion_dark:active {
+        outline: 0.2rem solid $text-base;
+
+        transition: all 0s;
+        -webkit-transition: all 0s;
+        -moz-transition: all 0s;
+        -ms-transition: all 0s;
+        -o-transition: all 0s;
+    }
+    .btn_animetion_dark:active:hover {
+        outline: 0.2rem solid $text-base;
+
+        transition: all 0s;
+        -webkit-transition: all 0s;
+        -moz-transition: all 0s;
+        -ms-transition: all 0s;
+        -o-transition: all 0s;
 }
+
+    .btn_animetion_dark[disabled] {
+        filter: brightness(100%);
+
+        path {
+            fill: rgba(2, 10, 10, 0.3);
+        }
+    }
+
+    .btn_animetion_light:hover {
+        filter: brightness(125%);
+        -webkit-filter: brightness(125%);
+
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
     .close-modal {
-        @extend .btnhover;
+        @extend .btn_animetion_dark;
         position: relative;
         top: 0px;
         left: 96%;
@@ -185,14 +226,19 @@ html {
                         justify-content: center;
 
                         button {
+                            @extend .btn_animetion_dark;
                             width: 24px;
                             height: 24px;
 
                             border: 0;
                             background-color: $base-grey;
 
-
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
                         }
+
+                        button[disabled] {}
 
                         span {
                             width: 32px;
@@ -220,7 +266,8 @@ html {
             margin-top: 20px;
 
             #add {
-                @extend .btnhover;
+                @extend .btn_animetion_dark;
+                @extend .btn_animetion_light;
                 width: 176px;
                 height: 65px;
                 border-width: 0;
@@ -232,7 +279,7 @@ html {
                 background-color: $text-red;
                 color: $base-color;
                 font-size: 18px;
-}
+            }
         }
     }
 }
