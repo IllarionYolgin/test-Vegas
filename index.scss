@@ -34,7 +34,25 @@ html {
     -ms-border-radius: $modal-radious;
     -o-border-radius: $modal-radious;
 
-    .close-modal{
+    .btnhover{
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+}
+    .btnhover:hover{
+        filter: brightness(85%);
+        -webkit-filter: brightness(85%);
+
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+}
+    .close-modal {
+        @extend .btnhover;
         position: relative;
         top: 0px;
         left: 96%;
@@ -44,7 +62,8 @@ html {
         -moz-border-radius: 10em;
         -ms-border-radius: 10em;
         -o-border-radius: 10em;
-}
+    }
+
     .wrapper {
         @media screen and (min-width: 800px) {
             display: grid;
@@ -201,21 +220,19 @@ html {
             margin-top: 20px;
 
             #add {
+                @extend .btnhover;
                 width: 176px;
                 height: 65px;
-
                 border-width: 0;
                 border-radius: 100px;
                 -webkit-border-radius: 100px;
                 -moz-border-radius: 100px;
                 -ms-border-radius: 100px;
                 -o-border-radius: 100px;
-
                 background-color: $text-red;
-
                 color: $base-color;
                 font-size: 18px;
-            }
+}
         }
     }
 }
