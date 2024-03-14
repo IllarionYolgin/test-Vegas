@@ -238,7 +238,16 @@ html {
                             align-items: center;
                         }
 
-                        button[disabled] {}
+                        button[disabled]:active {
+                            outline: 0 solid $text-base;
+                        }
+                        button[disabled]:hover {
+                            outline: 0 solid $text-base;
+                            cursor: auto;
+                        }
+                        button[disabled]:hover:active {
+                            outline: 0 solid $text-base;
+                        }
 
                         span {
                             width: 32px;
