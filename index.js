@@ -103,24 +103,20 @@ function getTotalSauceCount(modal) {
   return totalSauceCount;
 };
 
-function updateFreeSauceAmount(modal){
+function updateFreeSauceAmount(modal) {
   const saucePrice = 60;
-
-  const maxFreeSauceAmountValue = +modal.getElementsByClassName("max-free-sauce-amount")[0].innerHTML;
-  const selectedFreeSauceAmount = modal.getElementsByClassName("selected-free-sauce-amount")[0];
+  const maxFreeSauceAmountValue = +modal.querySelector(".max-free-sauce-amount").textContent;
+  const selectedFreeSauceAmount = modal.querySelector(".selected-free-sauce-amount");
   const totalSauceCount = getTotalSauceCount(modal);
-  const selectedFreeSauceAmountValue = (totalSauceCount < maxFreeSauceAmountValue) ? totalSauceCount : maxFreeSauceAmountValue;
+  const selectedFreeSauceAmountValue = Math.min(totalSauceCount, maxFreeSauceAmountValue);
 
-  selectedFreeSauceAmount.innerHTML = selectedFreeSauceAmountValue;
+  selectedFreeSauceAmount.textContent = selectedFreeSauceAmountValue;
 
-  const saucePriceValue = modal.getElementsByClassName("saucePriceValue");
-  let SaucePriceValueToSet = saucePrice;
-  if (totalSauceCount < maxFreeSauceAmountValue){
-     SaucePriceValueToSet = 0;
-  }
-  for (let i = 0; i < saucePriceValue.length; i++){
-    saucePriceValue[i].innerHTML = SaucePriceValueToSet;
-  }
+  const saucePriceValue = modal.querySelectorAll(".saucePriceValue");
+  const saucePriceToSet = (totalSauceCount < maxFreeSauceAmountValue) ? 0 : saucePrice;
+  saucePriceValue.forEach(element => {
+    element.textContent = saucePriceToSet;
+  });
 }
 
 function updateOnSauceChange(modal) {
