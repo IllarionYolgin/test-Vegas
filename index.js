@@ -9,14 +9,14 @@ window.onload = function () {
   const amounts = modal.getElementsByClassName("amount");
 
   function minusClickHandler(i) {
-    return function() {
-      removeSauce(i, amounts, minuses, plusses);
+    return function () {
+      removeSauce(i, amounts, minuses, plusses, modal);
     };
   }
 
   function plusClickHandler(i) {
-    return function() {
-      addSauce(i, amounts, minuses, plusses);
+    return function () {
+      addSauce(i, amounts, minuses, plusses, modal);
     };
   }
 
@@ -45,27 +45,31 @@ window.onload = function () {
   });
 };
 
-function removeSauce(number, amounts, minuses, plusses) {
+function removeSauce(number, amounts, minuses, plusses, modal) {
   if (amounts[number].innerHTML == 1) {
     disableMinusBtn(minuses[number]);
   }
-  if (getTotalSauceCount(amounts) == 10) {
+  if (getTotalSauceCount(modal) == 10) {
     enablePlusBtns(plusses);
   }
-  amounts[number].innerHTML = amounts[number].innerHTML - 1;
+  if (amounts[number].innerHTML > 0) {
+    amounts[number].innerHTML = amounts[number].innerHTML - 1;
+  }
+  updateOnSauceChange(modal);
 };
 
-function addSauce(number, amounts, minuses, plusses) {
+function addSauce(number, amounts, minuses, plusses, modal) {
   if (amounts[number].innerHTML == 0) {
     activateMinusBtn(minuses[number]);
   }
-  let totalAmount = getTotalSauceCount(amounts);
+  let totalAmount = getTotalSauceCount(modal);
   if (totalAmount >= 9) {
     disablePlusBtns(plusses);
   }
   if (totalAmount <= 9) {
     amounts[number].innerHTML = +amounts[number].innerHTML + 1;
   }
+  updateOnSauceChange(modal);
 };
 
 function disableMinusBtn(element) {
@@ -88,14 +92,44 @@ function enablePlusBtns(btns) {
   });
 }
 
-function getTotalSauceCount(elements) {
+function getTotalSauceCount(modal) {
   let totalSauceCount = 0;
+  const amounts = modal.getElementsByClassName("amount");
 
-  for (let element of elements) {
-    console.log("element", element)
-    console.log("element.innerHTML", element.innerHTML)
+  for (let element of Array.from(amounts)) {
     totalSauceCount += +element.innerHTML;
   }
 
   return totalSauceCount;
 };
+
+function updateFreeSauceAmount(modal){
+  const maxFreeSauceAmountValue = +modal.getElementsByClassName("max-free-sauce-amount")[0].innerHTML;
+  const selectedFreeSauceAmount = modal.getElementsByClassName("selected-free-sauce-amount")[0];
+  const totalSauceCount = getTotalSauceCount(modal);
+  const selectedFreeSauceAmountValue = (totalSauceCount < maxFreeSauceAmountValue) ? totalSauceCount : maxFreeSauceAmountValue;
+console.log("selectedFreeSauceAmountValue", selectedFreeSauceAmountValue);
+  selectedFreeSauceAmount.innerHTML = selectedFreeSauceAmountValue;
+}
+
+function updateOnSauceChange(modal) {
+  const saucesPrices = modal.getElementsByClassName("saucePrice");
+  const saucePriceValue = modal.getElementsByClassName("saucePriceValue");
+
+  updateFreeSauceAmount(modal);
+  updateTotal(modal);
+}
+
+function updateTotal(modal) {
+  const productPrice = 220;
+  const saucePrice = 60;
+
+  const selectedFreeSauceAmount = +modal.getElementsByClassName("selected-free-sauce-amount")[0].innerHTML;
+
+  const total = modal.getElementsByClassName("total")[0];
+  const totalValue = total.getElementsByClassName("value")[0];
+
+  const totalSauceCount = getTotalSauceCount(modal);
+
+  totalValue.innerHTML = productPrice + ((totalSauceCount > 0) ? ((totalSauceCount - selectedFreeSauceAmount) * saucePrice) : 0);
+}

@@ -51,13 +51,15 @@
                 <hr>
                 <div class="header">
                     <h4>Соус на выбор</h4>
-                    <span>1 / 1 за 0₽</span>
+                    <span><span class="selected-free-sauce-amount">0</span> / <span
+                            class="max-free-sauce-amount">1</span> за 0₽</span>
                 </div>
                 <div class="body">
                     <div class="sauce">
-                        <div><span class="name">Кетчуп</span><span class="price">+0₽</span></div>
+                        <div><span class="name">Кетчуп</span><span class="saucePrice">+<span
+                                    class="saucePriceValue">0</span>₽</span></div>
                         <div class="counter">
-                             <button class="minus" disabled>
+                            <button class="minus" disabled>
                                 <svg width="15" height="15" viewBox="0 0 15 2" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="application">
                                     <path
@@ -65,7 +67,7 @@
                                         fill="#020A0A" />
                                 </svg>
                             </button>
-                             <span class="amount">0</span>
+                            <span class="amount">0</span>
                             <button class="plus">
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="application">
@@ -77,9 +79,10 @@
                         </div>
                     </div>
                     <div class="sauce">
-                        <div><span class="name">Сырный</span><span class="price">+60₽</span></div>
+                        <div><span class="name">Сырный</span><span class="saucePrice">+<span
+                                    class="saucePriceValue">0</span>₽</span></div>
                         <div class="counter">
-                             <button class="minus" disabled>
+                            <button class="minus" disabled>
                                 <svg width="15" height="15" viewBox="0 0 15 2" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="application">
                                     <path
@@ -87,7 +90,7 @@
                                         fill="#020A0A" />
                                 </svg>
                             </button>
-                             <span class="amount">0</span>
+                            <span class="amount">0</span>
                             <button class="plus">
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="application">
@@ -99,9 +102,10 @@
                         </div>
                     </div>
                     <div class="sauce">
-                        <div><span class="name">Блю-чиз</span><span class="price">+60₽</span></div>
+                        <div><span class="name">Блю-чиз</span><span class="saucePrice">+<span
+                                    class="saucePriceValue">0</span>₽</span></div>
                         <div class="counter">
-                             <button class="minus" disabled>
+                            <button class="minus" disabled>
                                 <svg width="15" height="15" viewBox="0 0 15 2" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="application">
                                     <path
@@ -109,7 +113,7 @@
                                         fill="#020A0A" />
                                 </svg>
                             </button>
-                             <span class="amount">0</span>
+                            <span class="amount">0</span>
                             <button class="plus">
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="application">
@@ -121,9 +125,10 @@
                         </div>
                     </div>
                     <div class="sauce">
-                        <div><span class="name">Барбекю</span><span class="price">+60₽</span></div>
+                        <div><span class="name">Барбекю</span><span class="saucePrice">+<span
+                                    class="saucePriceValue">0</span>₽</span></div>
                         <div class="counter">
-                             <button class="minus" disabled>
+                            <button class="minus" disabled>
                                 <svg width="15" height="15" viewBox="0 0 15 2" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" role="application">
                                     <path
@@ -144,7 +149,12 @@
                     </div>
                 </div>
             </div>
-            <div class="total"><span>0₽</span><button id="add">Добавить</button></div>
+            <div class="total">
+                <div>
+                    <span class="value">220<span>₽
+                </div>
+                <button id="add">Добавить</button>
+            </div>
         </div>
     </dialog>
     <script src="index.js"></script>
