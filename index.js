@@ -104,12 +104,23 @@ function getTotalSauceCount(modal) {
 };
 
 function updateFreeSauceAmount(modal){
+  const saucePrice = 60;
+
   const maxFreeSauceAmountValue = +modal.getElementsByClassName("max-free-sauce-amount")[0].innerHTML;
   const selectedFreeSauceAmount = modal.getElementsByClassName("selected-free-sauce-amount")[0];
   const totalSauceCount = getTotalSauceCount(modal);
   const selectedFreeSauceAmountValue = (totalSauceCount < maxFreeSauceAmountValue) ? totalSauceCount : maxFreeSauceAmountValue;
-console.log("selectedFreeSauceAmountValue", selectedFreeSauceAmountValue);
+
   selectedFreeSauceAmount.innerHTML = selectedFreeSauceAmountValue;
+
+  const saucePriceValue = modal.getElementsByClassName("saucePriceValue");
+  let SaucePriceValueToSet = saucePrice;
+  if (totalSauceCount < maxFreeSauceAmountValue){
+     SaucePriceValueToSet = 0;
+  }
+  for (let i = 0; i < saucePriceValue.length; i++){
+    saucePriceValue[i].innerHTML = SaucePriceValueToSet;
+  }
 }
 
 function updateOnSauceChange(modal) {
