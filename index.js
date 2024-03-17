@@ -120,9 +120,6 @@ function updateFreeSauceAmount(modal) {
 }
 
 function updateOnSauceChange(modal) {
-  const saucesPrices = modal.getElementsByClassName("saucePrice");
-  const saucePriceValue = modal.getElementsByClassName("saucePriceValue");
-
   updateFreeSauceAmount(modal);
   updateTotal(modal);
 }
@@ -130,13 +127,10 @@ function updateOnSauceChange(modal) {
 function updateTotal(modal) {
   const productPrice = 220;
   const saucePrice = 60;
-
-  const selectedFreeSauceAmount = +modal.getElementsByClassName("selected-free-sauce-amount")[0].innerHTML;
-
-  const total = modal.getElementsByClassName("total")[0];
-  const totalValue = total.getElementsByClassName("value")[0];
-
+  const selectedFreeSauceAmount = +modal.querySelector(".selected-free-sauce-amount").textContent;
+  const total = modal.querySelector(".total .value");
   const totalSauceCount = getTotalSauceCount(modal);
-
-  totalValue.innerHTML = productPrice + ((totalSauceCount > 0) ? ((totalSauceCount - selectedFreeSauceAmount) * saucePrice) : 0);
+  const totalValue = productPrice + ((totalSauceCount > 0) ? ((totalSauceCount - selectedFreeSauceAmount) * saucePrice) : 0);
+  
+  total.textContent = totalValue;
 }
