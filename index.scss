@@ -21,8 +21,6 @@ html {
     $text-grey: #787878;
     $text-red: #DE341D;
     $modal-radius: 25px;
-    width: min(933px, 100%);
-    height: min(587px, 100%);
     padding: min(32px, 5%);
     background-color: $base-color;
     border-color: $base-color;
@@ -113,9 +111,14 @@ html {
     }
 
     .wrapper {
-        @media screen and (min-width: 800px) {
+        position: relative;
+        font-size: 18px;
+        @media screen and (max-width: 325px){
+            font-size: 10px;
+        }
+        @media screen and (min-width: 700px) {
             display: grid;
-            grid-template-columns: 4fr 5fr;
+            grid-template-columns: 348px minmax(10% ,489px);
             grid-template-areas:
                 'img head'
                 'img sauce-options'
@@ -142,8 +145,8 @@ html {
 
         img {
             grid-area: img;
-            width: 348px;
-            height: 298px;
+            width: 100%;
+            height: 100%;
             display: block;
             object-fit: cover;
 
@@ -156,7 +159,7 @@ html {
 
         table {
             grid-area: table;
-            width: max(348px, 100%);
+            width: 100%;
             margin-top: 32px;
 
             thead {
@@ -196,15 +199,13 @@ html {
                 margin-top: 24px;
                 margin-bottom: 12px;
 
-                font-size: 18px;
-
                 h4 {
                     margin-top: 0;
                     margin-bottom: 0;
                 }
 
                 span {
-                    font-size: 16px;
+                    font-size: 0.889em;
                     color: $text-grey;
                 }
             }
@@ -213,8 +214,8 @@ html {
                 .sauce-option {
                     display: flex;
                     justify-content: space-between;
+                    flex-wrap: wrap;
 
-                    font-size: 18px;
                     padding: 12px;
                     margin-bottom: 8px;
 
@@ -278,7 +279,7 @@ html {
             align-items: center;
 
             line-height: 44.8px;
-            font-size: 32px;
+            font-size: 1.778em;
             font-weight: 700;
 
             margin-top: 20px;
@@ -296,7 +297,6 @@ html {
                 -o-border-radius: 100px;
                 background-color: $text-red;
                 color: $base-color;
-                font-size: 18px;
             }
         }
     }
