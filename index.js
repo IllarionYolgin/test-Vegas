@@ -1,7 +1,7 @@
 window.onload = function () {
   const modal = document.getElementById("modal-1");
-  const openModal = document.querySelector(".open-modal-1");
-  const closeModal = document.querySelector(".close-modal-1");
+  const openModal = document.querySelector(".modal-open-button-1");
+  const closeModal = document.querySelector(".modal-close-button-1");
 
   const counter = modal.getElementsByClassName("counter");
   const minuses = modal.getElementsByClassName("minus");

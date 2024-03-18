@@ -92,7 +92,7 @@ html {
         -o-transition: all 0.5s;
     }
 
-    .close-modal {
+    .modal-close-button {
         @extend .btn_animetion_dark;
         position: relative;
         top: 0px;
