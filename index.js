@@ -12,7 +12,7 @@ window.onload = function () {
   function closeModal() {
     modal.close();
     removeEventListeners();
-  }
+  };
 
   const closeModalHandler = closeModal;
   closeModalBtn.addEventListener("click", closeModalHandler);
@@ -22,20 +22,20 @@ window.onload = function () {
     return function () {
       removeSauce(i, amounts, minuses, plusses, modal);
     };
-  }
+  };
 
   function plusClickHandler(i) {
     return function () {
       addSauce(i, amounts, minuses, plusses, modal);
     };
-  }
+  };
 
   const minusHandlers = [];
   const plusHandlers = [];
   for (let i = 0; i < counter.length; i++) {
     minusHandlers[i] = minusClickHandler(i);
     plusHandlers[i] = plusClickHandler(i);
-  }
+  };
 
   function addEventListeners() {
     closeModalBtn.addEventListener("click", closeModalHandler);
@@ -43,7 +43,7 @@ window.onload = function () {
       minuses[i].addEventListener("click", minusHandlers[i]);
       plusses[i].addEventListener("click", plusHandlers[i]);
     }
-  }
+  };
 
   function removeEventListeners() {
     closeModalBtn.removeEventListener("click", closeModalHandler);
@@ -51,7 +51,7 @@ window.onload = function () {
       minuses[i].removeEventListener("click", minusHandlers[i]);
       plusses[i].removeEventListener("click", plusHandlers[i]);
     }
-  }
+  };
 
   openModalBtn.addEventListener("click", () => {
     modal.showModal();
@@ -102,7 +102,7 @@ function addSauce(number, amounts, minuses, plusses, modal) {
 
 function disableMinusBtn(element) {
   element.disabled = true;
-}
+};
 
 function activateMinusBtn(element) {
   element.disabled = false;
@@ -112,19 +112,18 @@ function disablePlusBtns(btns) {
   Array.from(btns).forEach(element => {
     element.disabled = true;
   });
-}
+};
 
 function enablePlusBtns(btns) {
   Array.from(btns).forEach(element => {
     element.disabled = false;
   });
-}
+};
 
 function getTotalSauceCount(modal) {
   const amounts = Array.from(modal.getElementsByClassName("sauce-amount"));
   return amounts.reduce((total, element) => total + +element.textContent, 0);
 };
-
 
 function updateFreeSauceAmount(modal) {
   const saucePrice = 60;
@@ -154,6 +153,6 @@ function updateTotal(modal) {
   const total = modal.querySelector(".total-value");
   const totalSauceCount = getTotalSauceCount(modal);
   const totalValue = productPrice + ((totalSauceCount > 0) ? ((totalSauceCount - selectedFreeSauceAmount) * saucePrice) : 0);
-  
+
   total.textContent = totalValue;
 };
