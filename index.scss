@@ -20,21 +20,20 @@ html {
     $text-base: #020A0A;
     $text-grey: #787878;
     $text-red: #DE341D;
-    $modal-radious: 25px;
+    $modal-radius: 25px;
     width: min(933px, 100%);
     height: min(587px, 100%);
     padding: min(32px, 5%);
     background-color: $base-color;
     border-color: $base-color;
     border-width: 0;
+    border-radius: $modal-radius;
+    -webkit-border-radius: $modal-radius;
+    -moz-border-radius: $modal-radius;
+    -ms-border-radius: $modal-radius;
+    -o-border-radius: $modal-radius;
 
-    border-radius: $modal-radious;
-    -webkit-border-radius: $modal-radious;
-    -moz-border-radius: $modal-radious;
-    -ms-border-radius: $modal-radious;
-    -o-border-radius: $modal-radious;
-
-    .btn_animetion_dark {
+    .btn_animation_dark {
         transition: all 0.5s;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
@@ -42,7 +41,7 @@ html {
         -o-transition: all 0.5s;
     }
 
-    .btn_animetion_dark:hover {
+    .btn_animation_dark:hover {
         cursor: pointer;
         filter: brightness(85%);
         -webkit-filter: brightness(85%);
@@ -54,7 +53,7 @@ html {
         -o-transition: all 0.5s;
     }
 
-    .btn_animetion_dark:active {
+    .btn_animation_dark:active {
         outline: 0.2rem solid $text-base;
 
         transition: all 0s;
@@ -63,7 +62,8 @@ html {
         -ms-transition: all 0s;
         -o-transition: all 0s;
     }
-    .btn_animetion_dark:active:hover {
+
+    .btn_animation_dark:active:hover {
         outline: 0.2rem solid $text-base;
 
         transition: all 0s;
@@ -71,9 +71,9 @@ html {
         -moz-transition: all 0s;
         -ms-transition: all 0s;
         -o-transition: all 0s;
-}
+    }
 
-    .btn_animetion_dark[disabled] {
+    .btn_animation_dark[disabled] {
         filter: brightness(100%);
 
         path {
@@ -81,7 +81,7 @@ html {
         }
     }
 
-    .btn_animetion_light:hover {
+    .btn_animation_light:hover {
         filter: brightness(125%);
         -webkit-filter: brightness(125%);
 
@@ -93,10 +93,11 @@ html {
     }
 
     .modal-close-button {
-        @extend .btn_animetion_dark;
+        @extend.btn_animation_dark;
         position: relative;
         top: 0px;
         left: 96%;
+
         border-width: 0;
         border-radius: 10em;
         -webkit-border-radius: 10em;
@@ -140,12 +141,12 @@ html {
             display: block;
             object-fit: cover;
 
-            border-radius: $modal-radious;
-            -webkit-border-radius: $modal-radious;
-            -moz-border-radius: $modal-radious;
-            -ms-border-radius: $modal-radious;
-            -o-border-radius: $modal-radious;
-        }
+            border-radius: $modal-radius;
+            -webkit-border-radius: $modal-radius;
+            -moz-border-radius: $modal-radius;
+            -ms-border-radius: $modal-radius;
+            -o-border-radius: $modal-radius;
+}
 
         table {
             grid-area: table;
@@ -226,7 +227,7 @@ html {
                         justify-content: center;
 
                         button {
-                            @extend .btn_animetion_dark;
+                            @extend .btn_animation_dark;
                             width: 24px;
                             height: 24px;
 
@@ -241,10 +242,12 @@ html {
                         button[disabled]:active {
                             outline: 0 solid $text-base;
                         }
+
                         button[disabled]:hover {
                             outline: 0 solid $text-base;
                             cursor: auto;
                         }
+
                         button[disabled]:hover:active {
                             outline: 0 solid $text-base;
                         }
@@ -275,8 +278,8 @@ html {
             margin-top: 20px;
 
             #add {
-                @extend .btn_animetion_dark;
-                @extend .btn_animetion_light;
+                @extend .btn_animation_dark;
+                @extend .btn_animation_light;
                 width: 176px;
                 height: 65px;
                 border-width: 0;
