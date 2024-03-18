@@ -123,7 +123,7 @@ function updateTotal(modal) {
   const productPrice = 220;
   const saucePrice = 60;
   const selectedFreeSauceAmount = +modal.querySelector(".selected-free-sauce-amount").textContent;
-  const total = modal.querySelector(".total .value");
+  const total = modal.querySelector(".total-value");
   const totalSauceCount = getTotalSauceCount(modal);
   const totalValue = productPrice + ((totalSauceCount > 0) ? ((totalSauceCount - selectedFreeSauceAmount) * saucePrice) : 0);
   
