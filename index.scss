@@ -216,6 +216,7 @@ html {
                     display: flex;
                     justify-content: space-between;
                     flex-wrap: wrap;
+                    align-items: center;
 
                     padding: 12px;
                     margin-bottom: 8px;
@@ -264,6 +265,8 @@ html {
                             width: 32px;
                             height: 24px;
                             text-align: center;
+                            line-height: 24px;
+                            vertical-align: middle;
 
                             margin-left: 8px;
                             margin-right: 8px;
