@@ -1,13 +1,22 @@
 window.onload = function () {
   const modal = document.getElementById("modal-1");
-  const openModal = document.querySelector(".open-modal-1");
-  const closeModal = document.querySelector(".close-modal-1");
+  const openModalBtn = document.querySelector(".open-modal-1");
+  const closeModalBtn = document.querySelector(".close-modal-1");
 
   const counter = modal.getElementsByClassName("counter");
   const minuses = modal.getElementsByClassName("minus");
   const plusses = modal.getElementsByClassName("plus");
   const amounts = modal.getElementsByClassName("amount");
 
+  function closeModal() {
+    modal.close();
+    removeEventListeners();
+  }
+
+  const closeModalHandler = closeModal;
+  closeModalBtn.addEventListener("click", closeModalHandler);
+
+  // Define the click handlers with closures
   function minusClickHandler(i) {
     return function () {
       removeSauce(i, amounts, minuses, plusses, modal);
@@ -20,28 +29,46 @@ window.onload = function () {
     };
   }
 
+  const minusHandlers = [];
+  const plusHandlers = [];
+  for (let i = 0; i < counter.length; i++) {
+    minusHandlers[i] = minusClickHandler(i);
+    plusHandlers[i] = plusClickHandler(i);
+  }
+
   function addEventListeners() {
+    closeModalBtn.addEventListener("click", closeModalHandler);
     for (let i = 0; i < counter.length; i++) {
-      minuses[i].addEventListener("click", minusClickHandler(i));
-      plusses[i].addEventListener("click", plusClickHandler(i));
+      minuses[i].addEventListener("click", minusHandlers[i]);
+      plusses[i].addEventListener("click", plusHandlers[i]);
     }
   }
 
   function removeEventListeners() {
+    closeModalBtn.removeEventListener("click", closeModalHandler);
     for (let i = 0; i < counter.length; i++) {
-      minuses[i].removeEventListener("click", minusClickHandler(i));
-      plusses[i].removeEventListener("click", plusClickHandler(i));
+      minuses[i].removeEventListener("click", minusHandlers[i]);
+      plusses[i].removeEventListener("click", plusHandlers[i]);
     }
   }
 
-  openModal.addEventListener("click", () => {
+  openModalBtn.addEventListener("click", () => {
     modal.showModal();
     addEventListeners();
   });
 
-  closeModal.addEventListener("click", () => {
-    modal.close();
-    removeEventListeners();//it looks like this is not working properly
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      //if esc key was not pressed in combination with ctrl or alt or shift
+      const isNotCombinedKey = !(
+        event.ctrlKey ||
+        event.altKey ||
+        event.shiftKey
+      );
+      if (isNotCombinedKey) {
+        closeModal();
+      }
+    }
   });
 };
 
