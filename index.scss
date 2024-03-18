@@ -111,8 +111,8 @@ html {
             grid-template-columns: 4fr 5fr;
             grid-template-areas:
                 'img head'
-                'img sauces'
-                'table sauces'
+                'img sauce-options'
+                'table sauce-options'
                 'table total';
 
             column-gap: 32px;
@@ -178,10 +178,10 @@ html {
             }
         }
 
-        .sauces {
-            grid-area: sauces;
+        .sauce-options {
+            grid-area: sauce-options;
 
-            .header {
+            .sauce-options-header {
                 display: flex;
                 justify-content: space-between;
                 gap: 8px;
@@ -202,8 +202,8 @@ html {
                 }
             }
 
-            .body {
-                .sauce {
+            .sauce-options-body {
+                .sauce-option {
                     display: flex;
                     justify-content: space-between;
 
@@ -213,15 +213,15 @@ html {
 
                     background-color: $base-grey;
 
-                    .name {
+                    .sauce-name {
                         margin-right: 8px;
                     }
 
-                    .saucePrice {
+                    .sauce-price {
                         color: $text-grey;
                     }
 
-                    .counter {
+                    .sauce-counter {
                         display: flex;
                         justify-content: center;
 

@@ -3,7 +3,7 @@ window.onload = function () {
   const openModal = document.querySelector(".modal-open-button-1");
   const closeModal = document.querySelector(".modal-close-button-1");
 
-  const counter = modal.getElementsByClassName("counter");
+  const counter = modal.getElementsByClassName("sauce-counter");
   const minuses = modal.getElementsByClassName("minus");
   const plusses = modal.getElementsByClassName("plus");
   const amounts = modal.getElementsByClassName("amount");
@@ -107,7 +107,7 @@ function updateFreeSauceAmount(modal) {
 
   selectedFreeSauceAmount.textContent = selectedFreeSauceAmountValue;
 
-  const saucePriceValue = modal.querySelectorAll(".saucePriceValue");
+  const saucePriceValue = modal.querySelectorAll(".sauce-price-value");
   const saucePriceToSet = (totalSauceCount < maxFreeSauceAmountValue) ? 0 : saucePrice;
   saucePriceValue.forEach(element => {
     element.textContent = saucePriceToSet;
