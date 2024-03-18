@@ -6,7 +6,7 @@ window.onload = function () {
   const counter = modal.getElementsByClassName("sauce-counter");
   const minuses = modal.getElementsByClassName("minus");
   const plusses = modal.getElementsByClassName("plus");
-  const amounts = modal.getElementsByClassName("amount");
+  const amounts = modal.getElementsByClassName("sauce-amount");
 
   function minusClickHandler(i) {
     return function () {
@@ -93,7 +93,7 @@ function enablePlusBtns(btns) {
 }
 
 function getTotalSauceCount(modal) {
-  const amounts = Array.from(modal.getElementsByClassName("amount"));
+  const amounts = Array.from(modal.getElementsByClassName("sauce-amount"));
   return amounts.reduce((total, element) => total + +element.textContent, 0);
 };
 
