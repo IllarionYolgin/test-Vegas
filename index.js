@@ -1,12 +1,13 @@
 window.onload = function () {
   const modal = document.getElementById("modal-1");
-  const openModalBtn = document.querySelector(".open-modal-1");
-  const closeModalBtn = document.querySelector(".close-modal-1");
 
-  const counter = modal.getElementsByClassName("counter");
+  const openModalBtn = document.querySelector(".modal-open-button-1");
+  const closeModalBtn = document.querySelector(".modal-close-button-1");
+
+  const counter = modal.getElementsByClassName("sauce-counter");
   const minuses = modal.getElementsByClassName("minus");
   const plusses = modal.getElementsByClassName("plus");
-  const amounts = modal.getElementsByClassName("amount");
+  const amounts = modal.getElementsByClassName("sauce-amount");
 
   function closeModal() {
     modal.close();
@@ -120,7 +121,7 @@ function enablePlusBtns(btns) {
 }
 
 function getTotalSauceCount(modal) {
-  const amounts = Array.from(modal.getElementsByClassName("amount"));
+  const amounts = Array.from(modal.getElementsByClassName("sauce-amount"));
   return amounts.reduce((total, element) => total + +element.textContent, 0);
 };
 
@@ -134,7 +135,7 @@ function updateFreeSauceAmount(modal) {
 
   selectedFreeSauceAmount.textContent = selectedFreeSauceAmountValue;
 
-  const saucePriceValue = modal.querySelectorAll(".saucePriceValue");
+  const saucePriceValue = modal.querySelectorAll(".sauce-price-value");
   const saucePriceToSet = (totalSauceCount < maxFreeSauceAmountValue) ? 0 : saucePrice;
   saucePriceValue.forEach(element => {
     element.textContent = saucePriceToSet;
@@ -150,7 +151,7 @@ function updateTotal(modal) {
   const productPrice = 220;
   const saucePrice = 60;
   const selectedFreeSauceAmount = +modal.querySelector(".selected-free-sauce-amount").textContent;
-  const total = modal.querySelector(".total .value");
+  const total = modal.querySelector(".total-value");
   const totalSauceCount = getTotalSauceCount(modal);
   const totalValue = productPrice + ((totalSauceCount > 0) ? ((totalSauceCount - selectedFreeSauceAmount) * saucePrice) : 0);
   

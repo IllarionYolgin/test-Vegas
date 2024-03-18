@@ -92,7 +92,7 @@ html {
         -o-transition: all 0.5s;
     }
 
-    .close-modal {
+    .modal-close-button {
         @extend .btn_animetion_dark;
         position: relative;
         top: 0px;
@@ -111,9 +111,9 @@ html {
             grid-template-columns: 4fr 5fr;
             grid-template-areas:
                 'img head'
-                'img sauces'
-                'table sauces'
-                'table total';
+                'img sauce-options'
+                'table sauce-options'
+                'table order-total';
 
             column-gap: 32px;
         }
@@ -126,7 +126,7 @@ html {
                 margin-bottom: 8px;
             }
 
-            .weight {
+            .serving-weight {
                 color: $text-grey;
                 margin-top: 8px;
             }
@@ -178,10 +178,10 @@ html {
             }
         }
 
-        .sauces {
-            grid-area: sauces;
+        .sauce-options {
+            grid-area: sauce-options;
 
-            .header {
+            .sauce-options-header {
                 display: flex;
                 justify-content: space-between;
                 gap: 8px;
@@ -202,8 +202,8 @@ html {
                 }
             }
 
-            .body {
-                .sauce {
+            .sauce-options-body {
+                .sauce-option {
                     display: flex;
                     justify-content: space-between;
 
@@ -213,15 +213,15 @@ html {
 
                     background-color: $base-grey;
 
-                    .name {
+                    .sauce-name {
                         margin-right: 8px;
                     }
 
-                    .saucePrice {
+                    .sauce-price {
                         color: $text-grey;
                     }
 
-                    .counter {
+                    .sauce-counter {
                         display: flex;
                         justify-content: center;
 
@@ -262,8 +262,8 @@ html {
             }
         }
 
-        .total {
-            grid-area: total;
+        .order-total {
+            grid-area: order-total;
             display: flex;
             justify-content: space-between;
             align-items: center;
