@@ -93,15 +93,10 @@ function enablePlusBtns(btns) {
 }
 
 function getTotalSauceCount(modal) {
-  let totalSauceCount = 0;
-  const amounts = modal.getElementsByClassName("amount");
-
-  for (let element of Array.from(amounts)) {
-    totalSauceCount += +element.innerHTML;
-  }
-
-  return totalSauceCount;
+  const amounts = Array.from(modal.getElementsByClassName("amount"));
+  return amounts.reduce((total, element) => total + +element.textContent, 0);
 };
+
 
 function updateFreeSauceAmount(modal) {
   const saucePrice = 60;
@@ -117,12 +112,12 @@ function updateFreeSauceAmount(modal) {
   saucePriceValue.forEach(element => {
     element.textContent = saucePriceToSet;
   });
-}
+};
 
 function updateOnSauceChange(modal) {
   updateFreeSauceAmount(modal);
   updateTotal(modal);
-}
+};
 
 function updateTotal(modal) {
   const productPrice = 220;
@@ -133,4 +128,4 @@ function updateTotal(modal) {
   const totalValue = productPrice + ((totalSauceCount > 0) ? ((totalSauceCount - selectedFreeSauceAmount) * saucePrice) : 0);
   
   total.textContent = totalValue;
-}
+};
